@@ -193,16 +193,16 @@
   /* ---------- Credibility strip ---------- */
 
   .credibility {
-    background: var(--bg-alt);
+    background: var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
 
   .credibility .wrap {
-    padding: 30px 28px;
+    padding: 34px 28px;
     display: flex;
     flex-wrap: wrap;
-    gap: 36px;
+    gap: 40px;
     align-items: center;
     justify-content: space-between;
   }
@@ -210,32 +210,40 @@
   .cred-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    padding-right: 40px;
+    border-right: 1px solid var(--border);
+  }
+
+  .cred-item:last-of-type {
+    border-right: none;
+    padding-right: 0;
   }
 
   .cred-number {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 26px;
+    color: var(--accent);
   }
 
   .cred-label {
     font-size: 14px;
     color: var(--ink-soft);
-    max-width: 22ch;
+    max-width: 20ch;
   }
 
   .cred-badge {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     font-size: 14px;
     color: var(--ink-soft);
   }
 
   .cred-badge .badge-mark {
-    width: 46px;
-    height: 46px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     flex-shrink: 0;
     object-fit: cover;
@@ -353,6 +361,11 @@
     }
     .hero-photo { order: -1; aspect-ratio: 16/10; }
     .credibility .wrap { gap: 22px; }
+    .cred-item {
+      border-right: none;
+      padding-right: 0;
+      width: 100%;
+    }
     .step { grid-template-columns: 40px 1fr; gap: 16px; }
   }
 
@@ -401,11 +414,12 @@
       <span class="cred-label" data-i18n="cred.years">años gestionando campañas de publicidad digital</span>
     </div>
     <div class="cred-item">
-      <span class="cred-label" data-i18n="cred.anyBusiness">Trabajo con cualquier negocio local que necesite clientes nuevos</span>
+      <span class="cred-number">100%</span>
+      <span class="cred-label" data-i18n="cred.anyBusiness">negocios locales, cualquier sector</span>
     </div>
     <div class="cred-badge">
       <img class="badge-mark" src="meta-badge.png" alt="Meta Certified Digital Marketing Associate">
-      <span data-i18n="cred.metaBadge">Certificación de Meta</span>
+      <span data-i18n="cred.metaBadge">Certificado por Meta</span>
     </div>
   </div>
 </div>
@@ -466,8 +480,8 @@
       'hero.cta': 'Escríbeme por WhatsApp',
       'hero.ctaNote': 'Respondo en menos de 24h',
       'cred.years': 'años gestionando campañas de publicidad digital',
-      'cred.anyBusiness': 'Trabajo con cualquier negocio local que necesite clientes nuevos',
-      'cred.metaBadge': 'Certificación de Meta',
+      'cred.anyBusiness': 'negocios locales, cualquier sector',
+      'cred.metaBadge': 'Certificado por Meta',
       'method.h2': 'Cómo trabajo',
       'method.sub': 'Un proceso simple, sin capas innecesarias entre tú y los resultados.',
       'method.step1.h': 'Creamos la estrategia comercial',
@@ -487,8 +501,8 @@
       'hero.cta': 'Message me on WhatsApp',
       'hero.ctaNote': 'I reply within 24h',
       'cred.years': 'years running digital advertising campaigns',
-      'cred.anyBusiness': 'I work with any local business that needs new customers',
-      'cred.metaBadge': 'Meta certification',
+      'cred.anyBusiness': 'local businesses, any sector',
+      'cred.metaBadge': 'Certified by Meta',
       'method.h2': 'How I work',
       'method.sub': 'A simple process, with no unnecessary layers between you and the results.',
       'method.step1.h': 'We build the commercial strategy',
