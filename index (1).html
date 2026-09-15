@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrián Latorre — Anuncios en Meta para negocios locales</title>
+<meta name="description" content="Campañas de anuncios en Facebook e Instagram pensadas para generar clientes reales, no solo clics.">
+<link rel="icon" type="image/jpeg" href="logo-a.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E7D7CB;
+    --bg-alt: #DBC7B6;
+    --surface: #F5EEE6;
+    --ink: #211C18;
+    --ink-soft: #57493F;
+    --accent: #2F4739;
+    --accent-ink: #F5EEE6;
+    --border: rgba(33, 28, 24, 0.14);
+    --max-w: 1120px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    padding: 26px 0;
+  }
+
+  header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+  }
+
+  .brand span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .lang-toggle button {
+    background: none;
+    border: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    color: var(--ink-soft);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .lang-toggle button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .lang-toggle button:focus-visible,
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 76px;
+  }
+
+  .eyebrow {
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  .eyebrow strong { color: var(--ink); font-weight: 600; }
+
+  h1 {
+    font-size: clamp(34px, 4.4vw, 54px);
+    line-height: 1.08;
+    max-width: 15ch;
+  }
+
+  .hero-sub {
+    margin-top: 22px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 42ch;
+  }
+
+  .cta-row {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 26px;
+    border-radius: 8px;
+    transition: transform 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .cta-note {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .hero-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+    border: 2px dashed var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .hero-photo p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 22ch;
+    margin: 0;
+  }
+
+  /* to use a real photo: replace the .hero-photo div's content with
+     <img src="tu-foto.jpg" alt="Adrián Latorre"> and remove the dashed border */
+
+  /* ---------- Credibility strip ---------- */
+
+  .credibility {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .credibility .wrap {
+    padding: 30px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cred-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  .cred-label {
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 22ch;
+  }
+
+  .cred-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .cred-badge .badge-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--ink-soft);
+    flex-shrink: 0;
+  }
+  /* swap .badge-mark for <img src="meta-badge.png"> when you have the credential image */
+
+  /* ---------- Trusted by ---------- */
+
+  .trusted-by {
+    padding: 48px 0 8px;
+  }
+
+  .trusted-by-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+
+  .logo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .logo-slot {
+    flex: 1 1 140px;
+    max-width: 160px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1.5px dashed var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.75;
+  }
+
+  .logo-slot img {
+    max-height: 40px;
+    max-width: 80%;
+    object-fit: contain;
+    filter: grayscale(1);
+  }
+
+  .logo-slot span {
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Method ---------- */
+
+  .method {
+    padding: 84px 0;
+  }
+
+  .method-head {
+    max-width: 46ch;
+    margin-bottom: 56px;
+  }
+
+  .method-head h2 {
+    font-size: clamp(26px, 3vw, 34px);
+  }
+
+  .method-head p {
+    margin-top: 14px;
+    color: var(--ink-soft);
+    font-size: 17px;
+  }
+
+  .steps {
+    display: grid;
+    gap: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .steps .step:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--accent);
+  }
+
+  .step h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 54ch;
+    margin: 0;
+  }
+
+  /* ---------- Closing CTA ---------- */
+
+  .closing {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .closing .wrap {
+    padding: 80px 28px;
+    text-align: left;
+  }
+
+  .closing h2 {
+    color: var(--bg);
+    font-size: clamp(28px, 3.6vw, 40px);
+    max-width: 18ch;
+  }
+
+  .closing p {
+    margin-top: 16px;
+    color: rgba(231, 215, 203, 0.75);
+    font-size: 17px;
+    max-width: 42ch;
+  }
+
+  .closing .btn {
+    margin-top: 30px;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer .wrap {
+    padding: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  footer.closing-footer { background: var(--ink); }
+  footer.closing-footer .wrap { color: rgba(231, 215, 203, 0.6); }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 760px) {
+    .hero .wrap {
+      grid-template-columns: 1fr;
+      padding-top: 24px;
+      padding-bottom: 48px;
+    }
+    .hero-photo { order: -1; aspect-ratio: 16/10; }
+    .credibility .wrap { gap: 22px; }
+    .step { grid-template-columns: 40px 1fr; gap: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo-a.jpeg" alt="Logo Adrián Latorre">
+      <span>Adrián Latorre</span>
+    </a>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang-btn="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Hola, soy <strong>Adrián</strong>.</p>
+      <h1 data-i18n="hero.h1">Consigo nuevos clientes para tu negocio con anuncios en Meta</h1>
+      <p class="hero-sub" data-i18n="hero.sub">Campañas de Facebook e Instagram pensadas para generar contactos cualificados.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/34623925550" target="_blank" rel="noopener" data-i18n="hero.cta">Escríbeme por WhatsApp</a>
+        <span class="cta-note" data-i18n="hero.ctaNote">Respondo en menos de 24h</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <p data-i18n="hero.photoPlaceholder">Sustituye este bloque por tu foto (formato vertical, 4:5)</p>
+    </div>
+  </div>
+</section>
+
+<div class="credibility">
+  <div class="wrap">
+    <div class="cred-item">
+      <span class="cred-number">4+</span>
+      <span class="cred-label" data-i18n="cred.years">años gestionando campañas de publicidad digital</span>
+    </div>
+    <div class="cred-item">
+      <span class="cred-label" data-i18n="cred.anyBusiness">Trabajo con cualquier negocio local que necesite clientes nuevos</span>
+    </div>
+    <div class="cred-badge">
+      <span class="badge-mark" aria-hidden="true">M</span>
+      <span data-i18n="cred.metaBadge">Certificación de Meta</span>
+    </div>
+  </div>
+</div>
+
+<section class="trusted-by">
+  <div class="wrap">
+    <p class="trusted-by-label" data-i18n="trustedBy.label">Negocios con los que he trabajado</p>
+    <div class="logo-row">
+      <div class="logo-slot"><span>Logo 1</span></div>
+      <div class="logo-slot"><span>Logo 2</span></div>
+      <div class="logo-slot"><span>Logo 3</span></div>
+      <div class="logo-slot"><span>Logo 4</span></div>
+      <div class="logo-slot"><span>Logo 5</span></div>
+    </div>
+    <!-- Replace each .logo-slot's content with <img src="logo-x.png" alt="Nombre del negocio">
+         Add or remove .logo-slot divs to match how many logos you send. -->
+  </div>
+</section>
+
+<section class="method">
+  <div class="wrap">
+    <div class="method-head">
+      <h2 data-i18n="method.h2">Cómo trabajo</h2>
+      <p data-i18n="method.sub">Un proceso simple, sin capas innecesarias entre tú y los resultados.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <h3 data-i18n="method.step1.h">Creamos la estrategia comercial</h3>
+          <p data-i18n="method.step1.p">Diseño la estrategia y los anuncios pensados para tu negocio y tu público concreto, no un único anuncio suelto.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <h3 data-i18n="method.step2.h">Lanzamos las campañas</h3>
+          <p data-i18n="method.step2.p">Configuro y optimizo las campañas en Meta, dirigiendo a formularios nativos de Facebook e Instagram para que la persona no tenga que salir de la app.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <h3 data-i18n="method.step3.h">Recibes los contactos</h3>
+          <p data-i18n="method.step3.p">Cada nuevo cliente potencial te llega notificado, organizado en un documento compartido, listo para que lo contactes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2 data-i18n="closing.h2">¿Buscas nuevos clientes para tu negocio?</h2>
+    <p data-i18n="closing.p">Escríbeme y hablamos, sin compromiso.</p>
+    <a class="btn" href="https://wa.me/34623925550" target="_blank" rel="noopener" data-i18n="closing.cta">Escríbeme por WhatsApp</a>
+  </div>
+</section>
+
+<footer class="closing-footer">
+  <div class="wrap footer-wrap">
+    <span>© 2026 Adrián Latorre</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var STR = {
+    es: {
+      'hero.eyebrow': 'Hola, soy <strong>Adrián</strong>.',
+      'hero.h1': 'Consigo nuevos clientes para tu negocio con anuncios en Meta',
+      'hero.sub': 'Campañas de Facebook e Instagram pensadas para generar contactos cualificados.',
+      'hero.cta': 'Escríbeme por WhatsApp',
+      'hero.ctaNote': 'Respondo en menos de 24h',
+      'hero.photoPlaceholder': 'Sustituye este bloque por tu foto (formato vertical, 4:5)',
+      'cred.years': 'años gestionando campañas de publicidad digital',
+      'cred.anyBusiness': 'Trabajo con cualquier negocio local que necesite clientes nuevos',
+      'cred.metaBadge': 'Certificación de Meta',
+      'trustedBy.label': 'Negocios con los que he trabajado',
+      'method.h2': 'Cómo trabajo',
+      'method.sub': 'Un proceso simple, sin capas innecesarias entre tú y los resultados.',
+      'method.step1.h': 'Creamos la estrategia comercial',
+      'method.step1.p': 'Diseño la estrategia y los anuncios pensados para tu negocio y tu público concreto, no un único anuncio suelto.',
+      'method.step2.h': 'Lanzamos las campañas',
+      'method.step2.p': 'Configuro y optimizo las campañas en Meta, dirigiendo a formularios nativos de Facebook e Instagram para que la persona no tenga que salir de la app.',
+      'method.step3.h': 'Recibes los contactos',
+      'method.step3.p': 'Cada nuevo cliente potencial te llega notificado, organizado en un documento compartido, listo para que lo contactes.',
+      'closing.h2': '¿Buscas nuevos clientes para tu negocio?',
+      'closing.p': 'Escríbeme y hablamos, sin compromiso.',
+      'closing.cta': 'Escríbeme por WhatsApp'
+    },
+    en: {
+      'hero.eyebrow': 'Hi, I\'m <strong>Adrián</strong>.',
+      'hero.h1': 'I get new customers for your business with Meta ads',
+      'hero.sub': 'Facebook and Instagram campaigns built to generate qualified leads.',
+      'hero.cta': 'Message me on WhatsApp',
+      'hero.ctaNote': 'I reply within 24h',
+      'hero.photoPlaceholder': 'Replace this block with your photo (vertical, 4:5)',
+      'cred.years': 'years running digital advertising campaigns',
+      'cred.anyBusiness': 'I work with any local business that needs new customers',
+      'cred.metaBadge': 'Meta certification',
+      'trustedBy.label': 'Businesses I\'ve worked with',
+      'method.h2': 'How I work',
+      'method.sub': 'A simple process, with no unnecessary layers between you and the results.',
+      'method.step1.h': 'We build the commercial strategy',
+      'method.step1.p': 'I design the strategy and the ads around your business and your specific audience, not a single one-off ad.',
+      'method.step2.h': 'We launch the campaigns',
+      'method.step2.p': 'I set up and optimize the campaigns on Meta, driving people to native Facebook and Instagram lead forms so they never have to leave the app.',
+      'method.step3.h': 'You get the leads',
+      'method.step3.p': 'Every new lead reaches you, organized in a shared spreadsheet, ready for you to follow up.',
+      'closing.h2': 'Looking for new customers for your business?',
+      'closing.p': 'Send me a message and let\'s talk, no strings attached.',
+      'closing.cta': 'Message me on WhatsApp'
+    }
+  };
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      var str = STR[lang][key];
+      if (str) el.innerHTML = str;
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-btn') === lang ? 'true' : 'false');
+    });
+  }
+
+  document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.getAttribute('data-lang-btn'));
+    });
+  });
+
+  // Default: browser language if it starts with "en", otherwise Spanish.
+  var browserLang = (navigator.language || 'es').toLowerCase();
+  applyLang(browserLang.indexOf('en') === 0 ? 'en' : 'es');
+})();
+</script>
+
+</body>
+</html>
